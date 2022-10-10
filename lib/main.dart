@@ -1,6 +1,5 @@
 import 'package:app_quan_ly_chi_tieu/widgets/chart.dart';
-import 'package:app_quan_ly_chi_tieu/widgets/new_transaction.dart';
-import 'package:app_quan_ly_chi_tieu/widgets/transaction_list.dart';
+import 'package:app_quan_ly_chi_tieu/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -31,19 +30,17 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Flutter app"),
       ),
 
-      // THÂN LAYOUT
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
 
-          const Chart(),
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
 
-          NewTransaction(),
-
-          TransactionList()
-
-        ],
+            const Chart(),
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
